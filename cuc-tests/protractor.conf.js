@@ -35,7 +35,8 @@ exports.config = {
     'browserName': 'chrome'
   },
 
-  baseUrl: 'http://cp1tfsbuild5/controls/',
+//  baseUrl: 'http://cp1tfsbuild5/controls/',
+  baseUrl: 'http://localhost:9000',
 
   framework: 'mocha',
 
