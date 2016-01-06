@@ -53,6 +53,28 @@ describe('date-picker functional test suite ->', function(){
 
             expect(datePicker.timepopup.isDisplayed()).to.eventually.equal(true);
         });
+
+        it('Time selector should show when time picker icon is clicked is clicked', function () {
+
+            var datePicker = new CreateDatePicker();
+
+            datePicker.imageButton.click();
+            datePicker.timepickericon.click();
+
+            expect(datePicker.timepopup.isDisplayed()).to.eventually.equal(true);
+        });
+
+        it('calendar should show when date picker icon is clicked', function () {
+
+            var datePicker = new CreateDatePicker();
+
+            datePicker.imageButton.click();
+            datePicker.timepickericon.click();
+            datePicker.datepickericon.click();
+
+            expect(datePicker.calendarpopup.isDisplayed()).to.eventually.equal(true);
+        });
+
     });
 
 
