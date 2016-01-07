@@ -101,5 +101,17 @@ describe('date-picker functional test suite ->', function(){
 
             expect(datePicker.timeEntryfield.getAttribute("value")).to.eventually.equal(TestData.Time);
         });
+
+        it.only('date -> should NOT accept invalid date format', function () {
+
+            var datePicker = new CreateDatePicker();
+
+            datePicker.dateEntryfield.click();
+            datePicker.dateEntryfield.sendKeys(TestData.invalidDate);
+            datePicker.dateEntryfield.sendKeys(protractor.Key.TAB);
+
+            expect(datePicker.dateEntryfield.getAttribute("value")).to.eventually.not.equal(TestData.invalidDate);
+
+        });
     });
 });
