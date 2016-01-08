@@ -75,6 +75,42 @@ describe('date-picker functional test suite ->', function(){
             expect(datePicker.calendarpopup.isDisplayed()).to.eventually.equal(true);
         });
 
+        it('calendar should show previous month when left arrow is clicked', function () {
+
+            var datePicker = new CreateDatePicker();
+
+            datePicker.imageButton.click();
+
+            var currentmonth = datePicker.monthtitle;
+
+            currentmonth.getText().then(function(text)
+                {
+                    var previousMonth = TestData[text].Previous;
+
+                    datePicker.montharrowleft.click();  // go to previous month by clicking on left arrow
+
+                    expect(datePicker.monthtitle.getText()).to.eventually.equal(previousMonth);
+                });
+        });
+
+        it('calendar should show next month when right arrow is clicked', function () {
+
+            var datePicker = new CreateDatePicker();
+
+            datePicker.imageButton.click();
+
+            var currentmonth = datePicker.monthtitle;
+
+            currentmonth.getText().then(function(text)
+            {
+                var nextMonth = TestData[text].Next;
+
+                datePicker.montharrowright.click();  // go to next month by clicking on right arrow
+
+                expect(datePicker.monthtitle.getText()).to.eventually.equal(nextMonth);
+            });
+        });
+
     });
 
 
@@ -102,7 +138,7 @@ describe('date-picker functional test suite ->', function(){
             expect(datePicker.timeEntryfield.getAttribute("value")).to.eventually.equal(TestData.Time);
         });
 
-        it.only('date -> should NOT accept invalid date format', function () {
+        it('date -> should NOT accept invalid date format', function () {
 
             var datePicker = new CreateDatePicker();
 
