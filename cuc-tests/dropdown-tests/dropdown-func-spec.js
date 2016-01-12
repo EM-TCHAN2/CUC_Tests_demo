@@ -75,6 +75,19 @@ describe('dropdown functional test suite ->', function(){
 
         });
 
+        it('should close without making any selection when the ESC key is pressed', function () {
+
+            var dropdown = new CreateDropdown();
+
+            dropdown.dropdownselector.click();
+
+            var esc = browser.actions().sendKeys(protractor.Key.ESCAPE);
+            esc.perform();
+
+            expect(dropdown.dropdownmenu.isDisplayed()).to.eventually.equal(false);
+            expect(dropdown.dropdownselector.getText()).to.eventually.equal(TestData.DefaultPlaceholderText);
+        });
+
     });
 
 
