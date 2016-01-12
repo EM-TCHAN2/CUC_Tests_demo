@@ -9,9 +9,9 @@ module.exports = function(){
 
     // --------------------------------------------------------------------//
     var dropdownselector_cssLocator = '.selectedText.pull-left.large';
-    var dropdowncaret_cssLocator = '.caret'
+    var dropdowncaret_cssLocator = '.caret';
     var dropdownmenu_cssLocator = '.dropdown-menu.large';
-    var listitem_cssLocator = '[class="dropdown-menu large"]>LI>A'
+    var listitem_cssLocator = '[class="dropdown-menu large"]>LI>A';
 
     this.dropdownselector = element(by.css(dropdownselector_cssLocator));
     this.dropdowncaret = element(by.css(dropdowncaret_cssLocator));
