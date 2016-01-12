@@ -80,12 +80,25 @@ describe('dropdown functional test suite ->', function(){
             var dropdown = new CreateDropdown();
 
             dropdown.dropdownselector.click();
+            browser.wait(function(){
+                return dropdown.selectedlistitem.isPresent();
+            }, 3000);
 
-            var esc = browser.actions().sendKeys(protractor.Key.ESCAPE);
-            esc.perform();
+            browser.actions().sendKeys(protractor.Key.ESCAPE).perform();
 
             expect(dropdown.dropdownmenu.isDisplayed()).to.eventually.equal(false);
             expect(dropdown.dropdownselector.getText()).to.eventually.equal(TestData.DefaultPlaceholderText);
+        });
+
+        it('should NOT be able to type/enter any string in the selector field', function () {
+
+            var dropdown = new CreateDropdown();
+
+            dropdown.dropdownselector.click();
+            browser.actions().sendKeys(TestData.AnyText).perform();
+
+            expect(dropdown.dropdownselector.getText()).to.eventually.not.equal(TestData.AnyText);
+
         });
 
     });
