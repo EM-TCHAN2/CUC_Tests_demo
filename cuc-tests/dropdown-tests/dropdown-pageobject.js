@@ -1,3 +1,21 @@
 /**
- * Created by autoTest on 12/24/2015.
+ * Created by tonychan on 1/11/2015.
  */
+
+var TestData = require('../dropdown-tests/dropdown-testdata.json');
+//var DropDown = function(){
+
+module.exports = function(){
+
+    // --------------------------------------------------------------------//
+    var dropdownselector_cssLocator = '.selectedText.pull-left.large';
+    var dropdownmenu_cssLocator = '.dropdown-menu.large';
+    var listitem_cssLocator = '[class="dropdown-menu large"]>LI>A'
+
+    this.dropdownselector = element(by.css(dropdownselector_cssLocator));
+    this.dropdownmenu = element(by.css(dropdownmenu_cssLocator));
+    this.selectedlistitem = element(by.cssContainingText(listitem_cssLocator,TestData.Country));
+
+};
+
+//module.exports = DropDown();

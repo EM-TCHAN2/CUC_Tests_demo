@@ -12,7 +12,7 @@ exports.config = {
 
   // Spec patterns are relative to the location of this config.
   specs: [
-    'date-picker-tests/date-picker-func-spec.js'
+    'dropdown-tests/dropdown-func-spec.js'
   ],
 
   // Patterns to exclude.
