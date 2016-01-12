@@ -39,6 +39,16 @@ describe('dropdown functional test suite ->', function(){
 
         });
 
+        it('should show when dropdown caret is clicked', function () {
+
+            var dropdown = new CreateDropdown();
+
+            dropdown.dropdowncaret.click();
+
+            expect(dropdown.dropdownmenu.isDisplayed()).to.eventually.equal(true);
+
+        });
+
         it('default Placeholder text should be Select One', function () {
 
             var dropdown = new CreateDropdown();
@@ -49,7 +59,7 @@ describe('dropdown functional test suite ->', function(){
 
         });
 
-        it.only('should show the selected list-item', function () {
+        it('should show the selected list-item', function () {
 
             var dropdown = new CreateDropdown();
 
